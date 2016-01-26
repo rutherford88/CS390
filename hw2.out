@@ -1,0 +1,101 @@
+===================================================
+  Assignement Two 
+  Jonathan Rutherford      
+ 2016-01-22 14:56:40
+===================================================
+
+----------------------------------------------------------------------
+Command to find out your shell default umask:
+----------------------------------------------------------------------
+umask
+0002
+----------------------------------------------------------------------
+Command to create directory hw2
+----------------------------------------------------------------------
+
+Your current location: /home/shortround/cs390/cs390 
+
+total 68
+drwxrwxr-x 2 shortround shortround  4096 Jan 17 12:29 hw1
+-rw-rw-r-- 1 shortround shortround 10240 Jan 17 12:30 hw1.tar
+drwxrwxr-x 2 shortround shortround  4096 Jan 22 14:56 hw2
+-rw-rw-r-- 1 shortround shortround   601 Jan 22 14:56 hw2.out
+-rwxrw-r-- 1 shortround shortround  7442 Jan 21 13:55 hw2.sh
+-rw-rw-r-- 1 shortround shortround    27 Jan 16 23:50 README.md
+----------------------------------------------------------------------
+What are the permissions (in letter) of directory hw2 based on the previous output?
+----------------------------------------------------------------------
+drwxrwxr-x
+----------------------------------------------------------------------
+Give the above permissions in octave:
+----------------------------------------------------------------------
+775
+----------------------------------------------------------------------
+Give the command to modify the permissions of directory hw2 so only you can access
+----------------------------------------------------------------------
+chmod -R 700 hw2
+total 68
+drwxrwxr-x 2 shortround shortround  4096 Jan 17 12:29 hw1
+-rw-rw-r-- 1 shortround shortround 10240 Jan 17 12:30 hw1.tar
+drwxrwxr-x 2 shortround shortround  4096 Jan 22 14:56 hw2
+-rw-rw-r-- 1 shortround shortround  1638 Jan 22 14:59 hw2.out
+-rwxrw-r-- 1 shortround shortround  7442 Jan 21 13:55 hw2.sh
+-rw-rw-r-- 1 shortround shortround    27 Jan 16 23:50 README.md
+----------------------------------------------------------------------
+What are the file permissions of file hw1/info.txt
+----------------------------------------------------------------------
+-rw-rw-r--
+-rw-rw-r-- 1 shortround shortround 160 Jan 17 12:23 hw1/info.txt
+----------------------------------------------------------------------
+Give the command to add execution permission to hw1/info.txt to YOU only
+----------------------------------------------------------------------
+chmod u+x hw1/info.txt
+-rw-rw-r-- 1 shortround shortround 160 Jan 17 12:23 hw1/info.txt
+
+============================================================================
+The following questions to exercise shell meta characters for file locating
+============================================================================
+
+----------------------------------------------------------------------
+
+Download tarball ladsrc.tar.gz from class website...
+
+----------------------------------------------------------------------
+wget http://zeta.itsc.uah.edu/cs390/assignments/ladsrc.tar.gz
+----------------------------------------------------------------------
+Give cmd to create directories a-gFiles h-oFiles p-zFiles include 
+----------------------------------------------------------------------
+mkdir -p a-gFiles h-oFiles p-zFiles include
+----------------------------------------------------------------------
+Copy all the .c files (in ladsrc) starting with letter [a-g] to directory a-gFiles 
+----------------------------------------------------------------------
+cp [a-g]*.c a-gFiles
+files in a-gFiles
+----------------------------------------------------------------------
+Copy all the .c files starting withletter [h-o] to directory h-oFiles 
+----------------------------------------------------------------------
+cp [h-o]*.c h-oFiles
+files in h-oFiles
+----------------------------------------------------------------------
+Copy all the .c files starting withletter [p-z] to directory p-zFiles 
+----------------------------------------------------------------------
+cp [p-z]*.c p-zFiles
+files in p-zFiles
+----------------------------------------------------------------------
+Copy all header file (.h) to directory include 
+----------------------------------------------------------------------
+cp *.h include
+files in include
+----------------------------------------------------------------------
+Using find command to list files of size larger than 10kB under directory ladsrc 
+----------------------------------------------------------------------
+find ladsrc -size 10kB
+total 68K
+drwxrwxr-x 2 shortround shortround 4.0K Jan 22 15:07 a-gFiles
+drwxrwxr-x 2 shortround shortround 4.0K Jan 22 15:07 h-oFiles
+drwxrwxr-x 2 shortround shortround 4.0K Jan 22 15:07 include
+drwxrwxr-x 2 shortround shortround  12K Dec  3  1999 ladsrc
+-rw-rw-r-- 1 shortround shortround  30K Jan 14 15:36 ladsrc.tar.gz
+drwxrwxr-x 2 shortround shortround 4.0K Jan 22 15:07 p-zFiles
+uid=1000(shortround) gid=1000(shortround) groups=1000(shortround),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),108(lpadmin),124(sambashare)
+Linux shortround-K55A 3.19.0-47-generic #53~14.04.1-Ubuntu SMP Mon Jan 18 16:09:14 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
